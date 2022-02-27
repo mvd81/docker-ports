@@ -1,6 +1,6 @@
 # Docker Service Ports
 
-Needed a list with the Docker service ports to prevent duplicate port for project.
+Needed a list with the Docker service ports to prevent duplicate ports for projects.
 
 ![](src/assets/screenshot.jpg)
 
@@ -24,7 +24,8 @@ volumes:
 - ./src:/var/www/html
 - /c//web:/var/www/html/projects
 ```
-Don't change `- ./src:/var/www/html`, this is for this Docker project.  
+Don't change `- ./src:/var/www/html`, this is for this Docker project.
+
 `/c//web` will point to ```c:/web/``` on my computer.  
 This is probably different on your machine so change `/c//web` but leave `:/var/www/html/projects` as it is. 
 
