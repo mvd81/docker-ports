@@ -1,0 +1,43 @@
+version: '3'
+
+networks:
+  dockerports_network:
+
+services:
+  nginx:
+    image: nginx:stable-alpine
+    container_name: dockerports_nginx
+    ports:
+      - "8100:80"
+    volumes:
+      - ./src:/var/www/html
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - php
+      - mysql
+    networks:
+      - dockerports_network
+
+  php:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: dockerports_php
+    volumes:
+      - ./src:/var/www/html
+      - /c/web/:/var/www/html/projects
+    ports:
+      - "9020:9000"
+    networks:
+      - dockerports_network
+ 
+  composer:
+    image: composer:latest
+    container_name: dockerports_composer
+    volumes:
+      - ./src:/var/www/html
+    working_dir: /var/www/html
+    depends_on:
+      - php
+    networks:
+      - dockerports_network

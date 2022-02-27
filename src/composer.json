@@ -1,0 +1,13 @@
+{
+    "name": "marce/docker-port-scan",
+    "authors": [
+        {
+            "name": "Marcel van Doornen",
+            "email": "vandoornenmarcel@gmail.com"
+        }
+    ],
+    "require": {
+        "symfony/var-dumper": "^5.4",
+        "symfony/yaml": "^5.4"
+    }
+}
