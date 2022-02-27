@@ -54,14 +54,14 @@ Now you can add those project locations
     'Sandbox/Testing',
     'Sandbox/Wip'
 ];
+```
+Or shorter / with wildcards
 
-
-// Or
+``` php
 'projectLocations' => [
     'Projects/**/**',
     'Sandbox/**/**'
 ];
-
 ```
 
 #### Services
@@ -77,7 +77,7 @@ Add the services where you want the get the ports.
         'redis' => ['redis']
     ],
 ```
-The array keys are the service names in the HTML table, the array values are the services key to search for.
+The array keys are the service names in the HTML table, the array values are the services key to search for in the `docker-compose.json` files.
 
 ![](src/assets/screenshot_services.jpg)
 
