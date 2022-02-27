@@ -77,7 +77,7 @@ Add the services where you want the get the ports.
         'redis' => ['redis']
     ],
 ```
-The key is the service name in the HTML table, the values are the services key to serach for.
+The array keys are the service names in the HTML table, the array values are the services key to search for.
 
 ![](src/assets/screenshot_services.jpg)
 
